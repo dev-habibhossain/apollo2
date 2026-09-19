@@ -4,11 +4,11 @@ import Navbar from "../components/shared/Navbar";
 
 const RootLayout = () => {
   return (
-    <div>
+    <div className="min-h-screen">
       <Navbar />
-      <div className="min-h-screen">
+      
         <Outlet />
-      </div>
+      
       <Footer />
     </div>
   );
