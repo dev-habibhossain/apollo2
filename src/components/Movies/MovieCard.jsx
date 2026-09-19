@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
 
-const MovieCard = ({ movie }) => {
-  const { id, name, type, language, genres, rating, image, premiered } = movie;
+const MovieCard = ({ movie, onDetails }) => {
+  const {  name, type, language, genres, rating, image, premiered } = movie;
 
   return (
     <div>
@@ -30,12 +30,12 @@ const MovieCard = ({ movie }) => {
               {rating?.average?.toFixed(1) || "N/A"}
             </span>
 
-            <a
-              href={`/movies/${id}`}
+            <button
+              onClick={() => onDetails(movie)}
               className="bg-orange-500 text-white font-semibold hover:bg-orange-600 px-3 py-2 rounded-md text-sm transition"
             >
               See Details
-            </a>
+            </button>
           </div>
         </div>
       </div>
